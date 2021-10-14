@@ -1,0 +1,73 @@
+@import "base";
+@import "form";
+
+.projects {
+  margin: 1rem;
+  border: 1px solid $color-red;
+
+  header {
+    background: $color-red;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    margin: 0;
+    color: white;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  li {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
+    padding: 1rem;
+    margin: 1rem;
+
+    h2 {
+      color: $color-red;
+      margin: 0.5rem 0;
+    }
+
+    h3 {
+      color: #575757;
+      font-size: 1.6rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+#finished-projects {
+  border-color: $color-blue;
+
+  header {
+    background: $color-blue;
+  }
+
+  li h2 {
+    color: $color-blue;
+  }
+
+  .droppable {
+    background: #d6e1ff;
+  }
+}
+
+.droppable {
+  background: #ffe3ee;
+}
+
+#user-input {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid $color-red;
+  background: #f7f7f7;
+}
