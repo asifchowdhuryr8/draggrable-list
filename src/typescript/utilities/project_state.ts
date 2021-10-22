@@ -1,3 +1,5 @@
+import { State } from "./base_class";
+
 // Project Type
 enum ProjectStatus {
   Active,
@@ -15,14 +17,15 @@ class Project {
 }
 
 // Project State Management
-type Listener = (items: Project[]) => void;
+type Listener<T> = (items: T[]) => void;
 
-class ProjectState {
-  private listeners: Listener[] = [];
+class ProjectState extends State<Project> {
   private projects: Project[] = [];
   private static instance: ProjectState;
 
-  private constructor() {}
+  private constructor() {
+    super();
+  }
 
   static getInstance() {
     if (this.instance) {
@@ -30,10 +33,6 @@ class ProjectState {
     }
     this.instance = new ProjectState();
     return this.instance;
-  }
-
-  addListener(listenerFn: Listener) {
-    this.listeners.push(listenerFn);
   }
 
   addProject(title: string, description: string, numOfPeople: number) {
@@ -51,4 +50,4 @@ class ProjectState {
   }
 }
 
-export { ProjectState, Project, ProjectStatus };
+export { ProjectState, Project, ProjectStatus, Listener };
